@@ -130,7 +130,8 @@ class LogstashTransport extends Transport {
   deliverTCP(message, callback) {
     callback = callback || (() => {});
 
-    this.socket.write(message, undefined, callback);
+    // this.socket.write(message, undefined, callback);
+    this.socket.write(message + '\n', undefined, callback);
   }
 
   deliverUDP(message, callback) {
